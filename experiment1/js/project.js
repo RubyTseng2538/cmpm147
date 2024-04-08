@@ -35,20 +35,37 @@ const fillers = {
   
   function generate() {
     let story = template;
-    let usedFillers = {}; // Keep track of used fillers
+    let usedFillers = {};
+    let usedScents = {}; // Keep track of used scents
     while (story.match(slotPattern)) {
       story = story.replace(slotPattern, (match, name) => {
-        // If filler for this slot has not been used yet, pick one and mark it as used
-        if (!usedFillers[name]) {
-          let options = fillers[name];
-          if (options) {
-            let selectedOption = options[Math.floor(Math.random() * options.length)];
-            usedFillers[name] = selectedOption;
-            return selectedOption;
+        if (name.startsWith('scent')) {
+          // If scent for this slot has not been used yet, pick one and mark it as used
+          if (!usedScents[name]) {
+            let options = fillers[name];
+            if (options) {
+              let selectedOption;
+              do {
+                selectedOption = options[Math.floor(Math.random() * options.length)];
+              } while (Object.values(usedScents).includes(selectedOption)); // Ensure selected scent is different from previously used scents
+              usedScents[name] = selectedOption;
+              return selectedOption;
+            }
           }
+          // If scent has been used, stick to the same one
+          return usedScents[name];
+        } else {
+          // For other fillers, use the existing logic
+          if (!usedFillers[name]) {
+            let options = fillers[name];
+            if (options) {
+              let selectedOption = options[Math.floor(Math.random() * options.length)];
+              usedFillers[name] = selectedOption;
+              return selectedOption;
+            }
+          }
+          return usedFillers[name];
         }
-        // If filler has been used, stick to the same one
-        return usedFillers[name];
       });
     }
   
