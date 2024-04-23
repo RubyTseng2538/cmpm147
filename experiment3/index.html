@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 03: Alternate Worlds</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -32,31 +32,36 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 03: Alternate Worlds</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
 					<!-- canvas will be added here -->
+					<textarea cols="20" rows="20" id="asciiBox" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
 				</div>
+				
                 <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+                    <button id="reseedButton">
+						reseed
+					  </button>
+					  <span id="seedReport"></span>
                 </div>
 			</div>
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>In this experiment, I attempted to create a convincing snow map while incorporating variation.</p>
 			</div>
-
+			
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>To enhance the generated appearance of the map while maintaining its visual appeal, I introduced more randomness to the location where trees are generated. However, the lake generation remained mostly consistent in the code. To introduce variation to both tree generation and the lake, I randomly added ground code after the trees and lake were generated.</p>
 			</div>
-
+			
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
-			</div>
+				<p>I encountered some challenges in achieving variation in the map's appearance. Attempting to make the lake generation more varied led to issues with auto-tiling, particularly in locations where the provided tiles could not replicate the desired appearance. As a result, I had to impose more restrictions on the lake. However, auto-tiling for trees around the original trees was more straightforward, and it enhanced the forest's density.</p>
+			</div>			
 
 		</section>
 		<nav id="links" class="minor-section">
