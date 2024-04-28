@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 04: Infinite Worlds</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<script src="./js/xxhash.min.js" defer></script>
+    <script src="./js/engine.js" defer></script>
+	<script src="./js/my_world.js" defer></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 04: Infinite Worlds</h1>
+
+			<div class="minor-section">
+				<div id="container">
+					<!-- canvas will be added here -->
+				</div>
+				
+                <div class="fullscreen-box">
+                    <button id="reseedButton">
+						reseed
+					  </button>
+					  <span id="seedReport"></span>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>In this experiment, I created an infinite flower grove with various elements of a flower grove.</p>
+			</div>
+			
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p>I use % for randomness and increase/decrease the number behind % based on how often I want the tile to spawn.</p>
+			</div>
+			
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p>I find myself having issues with both aligning the tiles to look nice and make the selected tile and flower spawn be accurate. It is accurate when the user didn't move and click on the tiles at the start, but if the user move out into the infinite world, the flower doesn't spawn at the time user clicked. </p>
+			</div>			
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
