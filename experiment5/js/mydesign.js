@@ -154,15 +154,15 @@ function getmountainsPoints(width, height, x, y, rotation) {
   // Convert rotation from degrees to radians
   var rotationRad = rotation * Math.PI / 180;
 
-  // Calculate the coordinates of the three vertices of the mountains
+  // Calculate the coordinates of the three vertices of the triangle
   var x1 = x;
   var y1 = y;
 
   var x2 = x + width * Math.cos(rotationRad);
   var y2 = y + width * Math.sin(rotationRad);
 
-  var x3 = x + height * Math.cos(rotationRad + Math.PI / 3); // 120 degrees rotation
-  var y3 = y + height * Math.sin(rotationRad + Math.PI / 3); // 120 degrees rotation
+  var x3 = x + height * Math.cos(rotationRad + Math.PI / 3); 
+  var y3 = y + height * Math.sin(rotationRad + Math.PI / 3); 
 
   // Return an array containing the coordinates of the three vertices
   return [
